@@ -6,9 +6,9 @@ public class Main {
 
     public static List<Integer> randList(int size, int p, int val) {
         Random generator = new Random();    // Attention : pseudoRandom !
-        List<Integer> list = new ArrayList<>(size);
-        for (int i = 0; i < size; ++i) {
-            if (p >= 0 && p <= 100) {
+        List<Integer> list = new ArrayList<>();
+        if (p >= 0 && p <= 100) {
+            for (int i = 0; i < size; ++i) {
                 int rdValue = generator.nextInt(100);
                 if (rdValue <= p) {
                     list.add(val);
@@ -35,5 +35,7 @@ public class Main {
         displayList(list2);
         List<Integer> list3 = randList(20, 100, 4);
         displayList(list3);
+        List<Integer> list4 = randList(20, 101, 4);
+        displayList(list4);
     }
 }
